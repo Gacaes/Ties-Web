@@ -4,10 +4,14 @@
         <title>TIES</title>
         <link rel="stylesheet" href="main.css">
 		<script>
-			var user_agent=navigator.userAgent.toLowerCase();
-			if (user_agent.search("iphone") > -1){
-				window.location.replace("mobile.index.html")
-			}else if (user_agent.search("android") > -1) {
+            var user_agent=navigator.userAgent.toLowerCase();
+            var count = 0
+            var t0 = user_agent.search("iphone")
+            var t1 = user_agent.search("android")
+            var t2 = user_agent.search("mobile")
+            console.log(t0,t1,t2)
+            count += t0 + t1 + t2 + 3
+			if (count > 0){
 				window.location.replace("mobile.index.html")
 			}
 		</script>
